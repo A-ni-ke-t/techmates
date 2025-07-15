@@ -11,8 +11,8 @@ const App = () => {
       <div className="scroll-smooth">
         <Navbar />
         <div className="max-w-7xl mx-auto pt-20 px-6">
-          <div>
-            <video
+        <div className="h-screen">
+        <video
               autoPlay
               loop
               muted
