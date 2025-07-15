@@ -38,7 +38,12 @@ const Navbar = () => {
             <ul>
               {navItems.map((item, index) => (
                 <li key={index} className="py-4">
-                  <a href={item.href}>{item.label}</a>
+                  <a
+                    href={item.href}
+                    onClick={() => setMobileDrawerOpen(false)}
+                  >
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
