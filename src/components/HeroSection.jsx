@@ -21,7 +21,8 @@ const HeroSection = () => {
         <video
           autoPlay
           loop
-          mutedplaysInline
+          muted
+          playsInline
           controls={false}
           className="rounded-lg w-1/2 border border-orange-700 shadow-sm shadow-orange-400 mx-2 my-4"
         >
