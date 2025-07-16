@@ -4,7 +4,7 @@ import Services from "./components/Services";
 import Expertise from "./components/Expertise";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import techmates1 from "./assets/techmates1.webm";
+import BackgroundVideo from "./assets/BackgroundVideo.mp4";
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
               playsInline
               className="absolute top-0 left-0 w-full h-full object-cover"
             >
-              <source src={techmates1} type="video/mp4" />
+              <source src={BackgroundVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>

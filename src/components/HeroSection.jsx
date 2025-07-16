@@ -1,5 +1,5 @@
-import video1 from "../assets/HeroVideo.webm";
-import video2 from "../assets/HeroVideo2.webm";
+import video1 from "../assets/HeroVideo.mp4";
+import video2 from "../assets/HeroVideo2.mp4";
 
 
 const HeroSection = () => {
