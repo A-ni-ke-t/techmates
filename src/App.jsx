@@ -3,7 +3,8 @@ import HeroSection from "./components/HeroSection";
 import Services from "./components/Services";
 import Expertise from "./components/Expertise";
 import Contact from "./components/Contact";
-import techmates1 from "./assets/techmates1.mp4";
+import Footer from "./components/Footer";
+import techmates1 from "./assets/techmates1.webm";
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
       <div className="scroll-smooth">
         <Navbar />
         <div className="max-w-7xl mx-auto pt-20 px-6">
-        <div className="h-screen">
+        <div className="h-[80vh]">
         <video
               autoPlay
               loop
@@ -37,6 +38,9 @@ const App = () => {
 
           <section id="contact" className="scroll-mt-20">
             <Contact />
+          </section>
+          <section id="contact" className="scroll-mt-20">
+            <Footer />
           </section>
         </div>
       </div>

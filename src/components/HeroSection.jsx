@@ -1,5 +1,5 @@
-import video1 from "../assets/HeroVideo.mp4";
-import video2 from "../assets/HeroVideo2.mp4";
+import video1 from "../assets/HeroVideo.webm";
+import video2 from "../assets/HeroVideo2.webm";
 
 
 const HeroSection = () => {
@@ -22,6 +22,7 @@ const HeroSection = () => {
           autoPlay
           loop
           muted
+          controls={false}
           className="rounded-lg w-1/2 border border-orange-700 shadow-sm shadow-orange-400 mx-2 my-4"
         >
           <source src={video1} type="video/mp4" />
@@ -31,6 +32,7 @@ const HeroSection = () => {
           autoPlay
           loop
           muted
+          controls={false}
           className="rounded-lg w-1/2 border border-orange-700 shadow-sm shadow-orange-400 mx-2 my-4"
         >
           <source src={video2} type="video/mp4" />

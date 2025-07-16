@@ -1,10 +1,14 @@
 import { CheckCircle2 } from "lucide-react";
 import codeImg from "../assets/code.jpg";
 import { checklistItems } from "../constants";
+import useIsMobile from "../functions/isMobile";
 
 const Expertise = () => {
+
+  const isMobile = useIsMobile();
+
   return (
-    <div className="mt-20">
+    <div className="">
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide">
         Powering your digital{" "}
         <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
@@ -24,7 +28,7 @@ const Expertise = () => {
               </div>
               <div>
                 <h6 className="mt-1 mb-2 text-l">{item.title}</h6>
-                <p className="text-xs text-neutral-500">{item.description}</p>
+                <p className={`${isMobile ? `text-s`: `text-xs`} text-neutral-500`}>{item.description}</p>
               </div>
             </div>
           ))}

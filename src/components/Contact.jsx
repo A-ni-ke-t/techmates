@@ -63,7 +63,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="mt-20 mb-20" id="contact">
+    <div className="mb-20" id="contact">
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide ">
         Reach out
         <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">
