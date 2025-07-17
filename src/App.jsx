@@ -12,7 +12,7 @@ const App = () => {
       <div className="scroll-smooth">
         <Navbar />
         <div className="max-w-7xl mx-auto pt-20 px-6">
-        <div className="h-[80vh]">
+        <div className="h-[100vh]">
         <video
               autoPlay
               loop
