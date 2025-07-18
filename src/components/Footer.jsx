@@ -35,7 +35,7 @@ const Footer = () => {
 
       {/* Bottom Line */}
       <div className="mt-10 text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} Techmates. All rights reserved.
+        © {new Date().getFullYear()} Techmate technologies. All rights reserved.
       </div>
     </footer>
   );

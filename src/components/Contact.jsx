@@ -11,7 +11,7 @@ const Contact = () => {
 
   const [isSending, setIsSending] = useState(false);
   const [success, setSuccess] = useState(null);
-  const [validation, setValidation] = useState(null);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,14 +22,22 @@ const Contact = () => {
     e.preventDefault();
     const phoneRegex = /^\d{10}$/;
 
+    // Reset previous feedback
+    setError("");
+    setSuccess(null);
+
+    // Validation
     if (!phoneRegex.test(formData.number)) {
-      setSuccess(false);
-      setValidation(false);
+      setError("Please enter a valid 10-digit contact number.");
+      return;
+    }
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setError("Please fill out all required fields.");
       return;
     }
 
     setIsSending(true);
-    setValidation(true);
 
     emailjs
       .send(
@@ -57,6 +65,7 @@ const Contact = () => {
         (error) => {
           console.error("Email sending failed:", error);
           setSuccess(false);
+          setError("Failed to send message. Try again later.");
         }
       )
       .finally(() => setIsSending(false));
@@ -64,7 +73,7 @@ const Contact = () => {
 
   return (
     <div className="mb-20" id="contact">
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide ">
+      <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide">
         Reach out
         <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">
           {" "}
@@ -88,7 +97,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full p-3 bg-transparent border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                  placeholder="Name"
+                  placeholder="Please enter your name."
                 />
               </div>
 
@@ -104,7 +113,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full p-3 bg-transparent border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                  placeholder="Email address"
+                  placeholder="Please enter your email address."
                 />
               </div>
 
@@ -119,7 +128,6 @@ const Contact = () => {
                   value={formData.number}
                   onChange={(e) => {
                     const value = e.target.value;
-                    // Allow only digits
                     if (/^\d{0,10}$/.test(value)) {
                       handleChange(e);
                     }
@@ -127,7 +135,7 @@ const Contact = () => {
                   required
                   maxLength={10}
                   className="w-full p-3 bg-transparent border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                  placeholder="Contact number"
+                  placeholder="Please enter your contact number."
                 />
               </div>
 
@@ -146,7 +154,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full p-3 bg-transparent border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                  placeholder="Your message..."
+                  placeholder="Please enter your message."
                 ></textarea>
               </div>
 
@@ -158,20 +166,14 @@ const Contact = () => {
                 {isSending ? "Sending..." : "Send Message"}
               </button>
 
-              {success === true && (
+              {success && (
                 <p className="text-green-500 text-center mt-4">
                   Message sent successfully!
                 </p>
               )}
-              {success === false && validation !== false && (
-                <p className="text-red-500 text-center mt-4">
-                  Failed to send message. Try again later.
-                </p>
-              )}
-              {validation === false && (
-                <p className="text-red-500 text-center mt-4">
-                  Enter valid contact number .
-                </p>
+
+              {!success && error && (
+                <p className="text-red-500 text-center mt-4">{error}</p>
               )}
             </form>
           </div>
