@@ -97,7 +97,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full p-3 bg-transparent border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                  placeholder="Please enter your name."
+                  placeholder="Enter name."
                 />
               </div>
 
@@ -113,7 +113,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full p-3 bg-transparent border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                  placeholder="Please enter your email address."
+                  placeholder="Enter email address."
                 />
               </div>
 
@@ -135,7 +135,7 @@ const Contact = () => {
                   required
                   maxLength={10}
                   className="w-full p-3 bg-transparent border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                  placeholder="Please enter your contact number."
+                  placeholder="Enter contact number."
                 />
               </div>
 
@@ -154,7 +154,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full p-3 bg-transparent border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-orange-500"
-                  placeholder="Please enter your message."
+                  placeholder="Enter message."
                 ></textarea>
               </div>
 
