@@ -8,7 +8,7 @@ const Footer = () => {
         {/* Logo + About */}
         <div className="flex flex-col items-start">
           <div className="flex items-center space-x-2">
-            <img src={logo} alt="Techmates Logo" className="h-8 w-auto p-2" />
+            <img src={logo} alt="Techmates Logo" className="h-10 w-auto p-2" />
             {/* <span className="text-lg font-semibold text-white">Techmate’s technologies</span> */}
           </div>
           <p className="mt-4 max-w-xs text-neutral-500">
